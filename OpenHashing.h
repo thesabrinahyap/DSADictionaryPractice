@@ -18,7 +18,7 @@ typedef struct{
 
 typedef struct{
 	String studID;
-	String studName;
+	NameType studName;
 	char sex;
 	Date birthDate;
 	String program;
@@ -36,13 +36,16 @@ typedef struct{
 	int max;
 }Dictionary;
 
+//Helper Functions
+SType* createNode(StudentType S); //allocSpace-like
+
 void initDictionary (Dictionary *D, int size);
-char hash (String LastName, int size);
+int hash (String LastName, int size);
 Date addDate(int day, int month, int year);
-Student addStudent(); //place the data types sa sulod
-bool addElement(Dictionary *D, Student S);
-bool deleteElement(Dictionary *D, Student S);
-bool searchElement(Dictionary *D, Student S);
+StudentType addStudent(String ID, NameType Name, char sex,  Date birthdate, String program, int year); /
+bool addElement(Dictionary *D, StudentType S);
+bool deleteElement(Dictionary *D, StudentType S);
+bool searchElement(Dictionary *D, StudentType S);
 void displayStudents (Dictionary D);
 void visualizeStudents (Dictionary D);
 
