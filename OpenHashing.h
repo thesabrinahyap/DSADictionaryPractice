@@ -38,15 +38,17 @@ typedef struct{
 
 //Helper Functions
 SType* createNode(StudentType S); //allocSpace-like
+NameType addName (String fname, String mname, String lname);
+Date addDate(int day, int month, int year);
+//String convertMonth()
 
 void initDictionary (Dictionary *D, int size);
 int hash (String LastName, int size);
-Date addDate(int day, int month, int year);
-StudentType addStudent(String ID, NameType Name, char sex,  Date birthdate, String program, int year); /
+StudentType addStudent(String ID, NameType Name, char sex,  Date birthdate, String program, int year); 
 bool addElement(Dictionary *D, StudentType S);
 bool deleteElement(Dictionary *D, StudentType S);
-bool searchElement(Dictionary *D, StudentType S);
-void displayStudents (Dictionary D);
+bool searchElement(Dictionary D, StudentType S);
+//void displayStudents (Dictionary D);
 void visualizeStudents (Dictionary D);
 
 #endif
